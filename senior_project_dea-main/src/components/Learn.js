@@ -560,9 +560,9 @@ function LearnPage() {
           </div>
           Sourced from CodePath and TechTarget.
         </Tab>
-        <Tab eventKey="seventh" title="Phishing" style={tab}>
-          Phishing is a technique used to obtain sensitive information such as names, addresses, bank account numbers, and other personal details. Scammers will create links that redirect users to a fake website that appears to be legitimate. Scammers attempt to instill a sense of urgency in their victims so that they make poor decisions and give away personal information.
-          <div style={{ paddingTop: "15px", width: "70%", alignItems: "center", marginLeft: "auto", marginRight: "auto" }}>
+        <Tab eventKey="eigth" title = "Phishing" style={tab}>
+        Web exploitation is the process of exploiting vulnerabilities in web-based applications to gain access to sensitive data or control over the app. Attackers can exploit these vulnerabilities to take over the entire app, steal sensitive data, or use the app to launch attacks on other systems.
+        <div style={{ paddingTop: "15px", width: "70%", alignItems: "center", marginLeft: "auto", marginRight: "auto" }}>
             <div style={spaceAfterQ}></div>
             <div style={spaceAfterQ}></div>
           </div> Q: What are the most popular signs of a phishing scam?<div style={spaceAfterQ}></div>
@@ -627,6 +627,74 @@ function LearnPage() {
           </div>
 
           Sourced from InspiredeLearning.
+        </Tab>
+        <Tab eventKey="seventh" title="Web Exploitation" style={tab}>
+          Phishing is a technique used to obtain sensitive information such as names, addresses, bank account numbers, and other personal details. Scammers will create links that redirect users to a fake website that appears to be legitimate. Scammers attempt to instill a sense of urgency in their victims so that they make poor decisions and give away personal information.
+          <div style={{ paddingTop: "15px", width: "70%", alignItems: "center", marginLeft: "auto", marginRight: "auto" }}>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+          </div> Q: What is the most common way of web exploitation?<div style={spaceAfterQ}></div>
+          <div>
+            <Form>
+              {['radio'].map((type) => (
+                <div className="mb-4">
+                  <Form.Group>
+                    <Form.Check id="q7option1"
+                      inline
+                      label="A. SQL Injection"
+                      name="answer7"
+                      type={type}
+                      value="A. SQL Injection"
+                      checked={answer7 === "A. SQL Injection"}
+                      onChange={onChange7}
+
+                    />
+                    <Form.Check id="q7option2"
+                      inline
+                      label="B. Directory Traversal"
+                      name="answer7"
+                      type={type}
+                      value="B. Directory Traversal"
+                      checked={answer7 === "B. Directory Traversal"}
+                      onChange={onChange7}
+
+                    />
+                    <Form.Check id="q7option3"
+                      inline
+                      label="C. Cross Site Request Forgery"
+                      name="answer7"
+                      type={type}
+                      value="C. Cross Site Request Forgery"
+                      checked={answer7 === "C. Cross Site Request Forgery"}
+                      onChange={onChange7}
+
+                    />
+                    <Form.Check id="q7option4"
+                      inline
+                      label="D. Command Execution"
+                      name="answer7"
+                      type={type}
+                      value="D. Command Execution"
+                      checked={answer7 === "D. Command Execution"}
+                      onChange={onChange7}
+
+                    />
+                  </Form.Group>
+                </div>
+              ))}
+            </Form>
+            <Button type="submit" onClick={checkAnswer7}>Submit</Button>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+            You selected: <strong>{answer7}</strong>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+            <div style={spaceAfterQ}></div>
+          </div>
+
+          Sourced from CTF101 and Mosse Cyber Security Institute.
         </Tab>
       </Tabs>
     </div>
