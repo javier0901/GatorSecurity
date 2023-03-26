@@ -12,6 +12,8 @@ require("./userSchema")
 const jwtObj = require("jsonwebtoken");
 const Jwt_secret_Obj = "sfhgfhgefugefyfeyf63r36737288gssfgusducb@#$&fvdhfdgfuf76";
 const User = mongoose.model("UserInfo")
+//const mongoUrl = `mongodb+srv://admin:Halcon46_@cluster0.ps99u.mongodb.net/?retryWrites=true&w=majority`;
+
 const mongoUrl = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.s2i3dum.mongodb.net/?retryWrites=true&w=majority`
 
 mongoose.connect(mongoUrl, {

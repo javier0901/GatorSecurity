@@ -118,6 +118,19 @@ function submit5(){
     return;
 }
 
+function submit6(){
+  var gamepage = document.getElementById("search-container-6");
+  console.log(gamepage);
+
+  if(document.getElementById("key").value === "GoGators"){
+    alert("Flag Found!");
+    updateScore(window.localStorage.getItem("token"), "game", "5");
+  } else{
+    alert("Try again!");
+  }
+  return;
+}
+
 const box = {
     boxShadow: "0 3px 10px rgba(0,0,0,.3)",
     padding: "30px 40px"
@@ -149,6 +162,7 @@ function GamePage() {
                 <Nav.Item>
                 <Nav.Link eventKey="fifth">Q5: Cryptography</Nav.Link>
                 </Nav.Item>
+                <Nav.Link eventKey="sixth">Q6: Web</Nav.Link>
             </Nav>
             </Col>
             <Col sm={9}>
@@ -207,6 +221,14 @@ function GamePage() {
                     <input type="text" placeholder="Type in secret key..." id="key"></input>
                     <button className="button" onClick={submit5}>Submit</button>
                     </div>                    
+                </Tab.Pane>
+                <Tab.Pane eventKey="sixth">
+                    <p>The Flag is </p>
+                    <p hidden>GoGators</p>
+                    <div id="search-container-6">
+                    <input type="text" placeholder="Type in secret key..." id="key"></input>
+                    <button className="button" onClick={submit6}>Submit</button>
+                    </div>    
                 </Tab.Pane>
             </Tab.Content>
             </Col>
