@@ -11,7 +11,7 @@ export default class SignUp extends Component {
       lname:"",
       email:"",
       password:"",
-      admin:false,
+      admin: false,
       code: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,18 +19,21 @@ export default class SignUp extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    const{fname, lname, email, password, admin,code} = this.state;
+    let{fname, lname, email, password, admin, code} = this.state;
     console.log(fname, lname, email, password, admin);
 
     if (code === "123") {
       this.setState({ admin: true});
+      admin = true;
     }
     else if(code === ""){
       this.setState({ admin: false});
+      admin = false;
     } else {
       alert("The administrator code that was given is incorrect. Please try again or leave blank.");
       return;
     }
+
 
     fetch("http://localhost:5000/register", {
       method: "POST",
