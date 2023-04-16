@@ -1,9 +1,11 @@
+import { useState, useRef } from 'react';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import eFax from '../images/eFax_phishing.png';
 import './LoginAndSignUp.css';
+
 
 function updateScore(token_, section_, index_) {
     fetch("http://localhost:5000/updatescore", {
@@ -111,7 +113,7 @@ function submit6() {
 
     if (document.getElementById("true/false").value === "true") {
         alert("Great job! The sender's email is misspelled and hovering over the email shows a supicious url.");
-        updateScore(window.localStorage.getItem("token"), "game", "5");
+        updateScore(window.localStorage.getItem("token"), "game", "5");    
     }
     else if (document.getElementById("true/false").value === "false") {
         alert("Incorrect. The sender's email is misspelled and hovering over the link shows a supicious url.");
@@ -153,10 +155,133 @@ const box = {
     padding: "30px 40px"
 }
 
-
+const test = (key, eventKey) => {
+    console.log(key);
+    console.log(eventKey);
+    if (eventKey === 'second'){
+        console.log('Second was clicked');
+    }
+};
 
 function GamePage() {
+        
+    const [time, setTime] = useState(null);
+    const [now, setNow] = useState(null);
 
+    const intervalRef = useRef(null);
+        
+    const handleStart = () => {
+        setTime(Date.now());
+        setNow(Date.now());
+        intervalRef.current = setInterval(() => {
+            setTime(Date.now());
+            }, 10);
+        };
+
+    const handleStop = () => {
+        clearInterval(intervalRef.current);
+    }
+        
+    let timePassed = (time - now) / 1000;
+
+    const handleStart2 = () => {
+        setTime(Date.now());
+        setNow(Date.now());
+        intervalRef.current = setInterval(() => {
+            setTime(Date.now());
+            }, 10);
+        };
+
+    const handleStop2 = () => {
+        clearInterval(intervalRef.current);
+    }
+        
+    let timePassed2 = (time - now) / 1000;
+
+    const handleStart3 = () => {
+        setTime(Date.now());
+        setNow(Date.now());
+        intervalRef.current = setInterval(() => {
+            setTime(Date.now());
+            }, 10);
+        };
+
+    const handleStop3 = () => {
+        clearInterval(intervalRef.current);
+    }
+        
+    let timePassed3 = (time - now) / 1000;
+
+    const handleStart4 = () => {
+        setTime(Date.now());
+        setNow(Date.now());
+        intervalRef.current = setInterval(() => {
+            setTime(Date.now());
+            }, 10);
+        };
+
+    const handleStop4 = () => {
+        clearInterval(intervalRef.current);
+    }
+        
+    let timePassed4 = (time - now) / 1000;
+
+    const handleStart5 = () => {
+        setTime(Date.now());
+        setNow(Date.now());
+        intervalRef.current = setInterval(() => {
+            setTime(Date.now());
+            }, 10);
+        };
+
+    const handleStop5 = () => {
+        clearInterval(intervalRef.current);
+    }
+        
+    let timePassed5 = (time - now) / 1000;
+
+    const handleStart6 = () => {
+        setTime(Date.now());
+        setNow(Date.now());
+        intervalRef.current = setInterval(() => {
+            setTime(Date.now());
+            }, 10);
+        };
+
+    const handleStop6 = () => {
+        clearInterval(intervalRef.current);
+    }
+        
+    let timePassed6 = (time - now) / 1000;
+    
+    const handleStart7 = () => {
+        setTime(Date.now());
+        setNow(Date.now());
+        intervalRef.current = setInterval(() => {
+            setTime(Date.now());
+            }, 10);
+        };
+
+    const handleStop7 = () => {
+        clearInterval(intervalRef.current);
+    }
+        
+    let timePassed7 = (time - now) / 1000;
+
+    const handleStart8 = () => {
+        setTime(Date.now());
+        setNow(Date.now());
+        intervalRef.current = setInterval(() => {
+            setTime(Date.now());
+            }, 10);
+        };
+
+    const handleStop8 = () => {
+        clearInterval(intervalRef.current);
+    }
+        
+    let timePassed8 = (time - now) / 1000;
+    
     return (
         <div id="gamepagediv">
             <h1 id="gametitle">Game</h1>
@@ -166,28 +291,28 @@ function GamePage() {
                     <Col sm={3}>
                         <Nav variant="pills" className="flex-column">
                             <Nav.Item>
-                                <Nav.Link eventKey="first">Q1: Cross-Site Scripting</Nav.Link>
+                                <Nav.Link eventKey="first" onclick = {handleStart}>Q1: Cross-Site Scripting</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="second">Q2: URL SQL Injection</Nav.Link>
+                                <Nav.Link eventKey="second" onClick={handleStart2}>Q2: URL SQL Injection</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="third">Q3: Login SQL Injection</Nav.Link>
+                                <Nav.Link eventKey="third" onClick={handleStart3}>Q3: Login SQL Injection</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="fourth">Q4: Input Sanitization </Nav.Link>
+                                <Nav.Link eventKey="fourth" onClick={handleStart4}>Q4: Input Sanitization </Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="fifth">Q5: Cryptography</Nav.Link>
+                                <Nav.Link eventKey="fifth" onClick={handleStart5}>Q5: Cryptography</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="sixth">Q6: Phishing</Nav.Link>
+                                <Nav.Link eventKey="sixth" onClick={handleStart6}>Q6: Phishing</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="seventh">Q7: Network Traffic Analysis: Traceroute</Nav.Link>
+                                <Nav.Link eventKey="seventh" onClick={handleStart7}>Q7: Network Traffic Analysis: Traceroute</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="eighth">Q8: Web</Nav.Link>
+                                <Nav.Link eventKey="eighth" onClick={handleStart8}>Q8: Web</Nav.Link>
                             </Nav.Item>
                         </Nav>
                     </Col>
@@ -199,7 +324,13 @@ function GamePage() {
                                 </p>
                                 <div className="search-container">
                                     <input type="text" placeholder="Search...." id="search"></input>
-                                    <button className="button" onClick={submit}>Submit</button>
+                                    <button className="button" onClick= {submit}>Submit</button>
+                                </div>
+                                <br></br>
+                                <h2>Time Taken: {timePassed.toFixed(3)}</h2>
+                                <div>
+                                    {/* <button onClick = {handleStart}>Start</button> */}
+                                    <button  onClick = {handleStop}>Stop</button>
                                 </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
@@ -209,8 +340,11 @@ function GamePage() {
                                 </p>
                                 <div id="search-container-2" >
                                     <input type="text" placeholder="Search...." id="search-2"></input>
-                                    <button className="button" onClick={submit2}>Submit</button>
+                                    <button className="button" onClick= {submit2}>Submit</button>
                                 </div>
+                                <br></br>
+                                <h2>Time Taken: {timePassed2.toFixed(3)}</h2>
+                                <button onClick = {handleStop2}>Stop</button>
                                 <div id="tableDiv">
                                 </div>
                             </Tab.Pane>
@@ -223,8 +357,15 @@ function GamePage() {
                                 <div id="search-container-3">
                                     <input type="text" placeholder="Email..." id="email"></input>
                                     <input type="text" placeholder="Password..." id="password"></input>
-                                    <button className="button" onClick={submit3}>Login</button>
+                                    <button className="button" onClick= {submit3}>Login</button>
                                 </div>
+                                <br></br>
+                                <h2>Time Taken: {timePassed3.toFixed(3)}</h2>
+                                <button onClick = {handleStop3}>Stop</button>
+                                {/* // <div>
+                                //     <button onClick ={handleStart}>Start</button>
+                                //     <button onClick = {handleStop}>Stop</button>
+                                // </div> */}
                             </Tab.Pane>
                             <Tab.Pane eventKey="fourth">
                                 <p>This question is about input sanitization to prevent things such as Cross-Site Scrypting attacks. Imagine an attacker types in a URL that has some
@@ -234,8 +375,15 @@ function GamePage() {
                                 </p>
                                 <div id="search-container-4">
                                     <input type="text" placeholder="Type in answer..." id="search-4"></input>
-                                    <button className="button" onClick={submit4}>Submit</button>
+                                    <button className="button" onClick= {submit4}>Submit</button>
                                 </div>
+                                <br></br>
+                                <h2>Time Taken: {timePassed4.toFixed(3)}</h2>
+                                <button onClick = {handleStop4}>Stop</button>
+                                {/* <div>
+                                    <button onClick ={handleStart}>Start</button>
+                                    <button onClick = {handleStop}>Stop</button>
+                                </div> */}
                             </Tab.Pane>
                             <Tab.Pane eventKey="fifth">
                                 <p>This question focuses on decrypting some text to make sense of it. In this case we have used a Caeser Cypher to encrypt the text. You have to figure out
@@ -245,8 +393,15 @@ function GamePage() {
                                 </p>
                                 <div id="search-container-5">
                                     <input type="text" placeholder="Type in secret key..." id="key"></input>
-                                    <button className="button" onClick={submit5}>Submit</button>
+                                    <button className="button" onClick= {submit5}>Submit</button>
                                 </div>
+                                <br></br>
+                                <h2>Time Taken: {timePassed5.toFixed(3)}</h2>
+                                <button onClick = {handleStop5}>Stop</button>
+                                {/* // <div>
+                                //     <button onClick ={handleStart}>Start</button>
+                                //     <button onClick = {handleStop}>Stop</button>
+                                // </div> */}
                             </Tab.Pane>
                             <Tab.Pane eventKey="sixth">
                                 <p>
@@ -256,9 +411,16 @@ function GamePage() {
                                 <a href="https://efax.hosting.com.mailru382.co/efaxdelivery/2017Dk4h325RE3" > <img className='eFax-image' src={eFax} alt="phishing" /></a>
                                 <div className="search-container-6">
                                     <input type="text" placeholder="true/false" id="true/false"></input>
-                                    <button className="button" onClick={submit6}>Submit</button>
+                                    <button className="button" onClick= {submit6}>Submit</button>
 
                                 </div>
+                                <br></br>
+                                <h2>Time Taken: {timePassed6.toFixed(3)}</h2>
+                                <button onClick = {handleStop6}>Stop</button>
+                                {/* <div>
+                                    <button onClick ={handleStart}>Start</button>
+                                    <button onClick = {handleStop}>Stop</button>
+                                </div> */}
                             </Tab.Pane>
                             <Tab.Pane eventKey="seventh">
                                 <p>
@@ -266,15 +428,29 @@ function GamePage() {
                                 </p>
                                 <div id="search-container-7">
                                     <input type="text" placeholder="Type in the IP Address" id="IP"></input>
-                                    <button className="button" onClick={submit7}>Submit</button>
+                                    <button className="button" onClick= {submit7}>Submit</button>
                                 </div>
+                                <br></br>
+                                <h2>Time Taken: {timePassed7.toFixed(3)}</h2>
+                                <button onClick = {handleStop7}>Stop</button>
+                                {/* <div>
+                                    <button onClick ={handleStart}>Start</button>
+                                    <button onClick = {handleStop}>Stop</button>
+                                </div> */}
                             </Tab.Pane>
                             <Tab.Pane eventKey="eighth">
                                 <p>The Flag is </p>
                                 <p hidden>GoGators</p>
                                 <div id="search-container-8">
                                 <input type="text" placeholder="Type in secret key..." id="answerChoice"></input>
-                                <button className="button" onClick={submit8}>Submit</button>
+                                <button className="button" onClick= {submit8}>Submit</button>
+                                <br></br>
+                                <h2>Time Taken: {timePassed8.toFixed(3)}</h2>
+                                <button onClick = {handleStop8}>Stop</button>
+                                {/* <div>
+                                    <button onClick ={handleStart}>Start</button>
+                                    <button onClick = {handleStop}>Stop</button>
+                                </div> */}
                     </div>
                 </Tab.Pane>
                         </Tab.Content>
