@@ -1,9 +1,11 @@
+import { useState, useRef } from 'react';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import eFax from '../images/eFax_phishing.png';
 import './LoginAndSignUp.css';
+
 
 function updateScore(token_, section_, index_) {
     fetch("http://localhost:5000/updatescore", {
@@ -156,7 +158,27 @@ const box = {
 
 
 function GamePage() {
+        
+    const [time, setTime] = useState(null);
+    const [now, setNow] = useState(null);
 
+    const intervalRef = useRef(null);
+        
+    const handleStart = () => {
+        setTime(Date.now());
+        setNow(Date.now());
+        intervalRef.current = setInterval(() => {
+            setTime(Date.now());
+            }, 10);
+        };
+
+    const handleStop = () => {
+        clearInterval(intervalRef.current);
+    }
+        
+    let timePassed = (time - now) / 1000;
+    
+    
     return (
         <div id="gamepagediv">
             <h1 id="gametitle">Game</h1>
@@ -200,6 +222,11 @@ function GamePage() {
                                 <div className="search-container">
                                     <input type="text" placeholder="Search...." id="search"></input>
                                     <button className="button" onClick={submit}>Submit</button>
+                                </div>
+                                <h2>Stopwatch: {timePassed.toFixed(3)}</h2>
+                                <div>
+                                    <button onClick ={handleStart}>Start</button>
+                                    <button onClick = {handleStop}>Stop</button>
                                 </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
