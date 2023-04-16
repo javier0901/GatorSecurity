@@ -324,13 +324,13 @@ function GamePage() {
                                 </p>
                                 <div className="search-container">
                                     <input type="text" placeholder="Search...." id="search"></input>
-                                    <button className="button" onClick= {() => {handleStop();submit();}}>Submit</button>
+                                    <button className="button" onClick= {submit}>Submit</button>
                                 </div>
                                 <br></br>
                                 <h2>Time Taken: {timePassed.toFixed(3)}</h2>
                                 <div>
                                     {/* <button onClick = {handleStart}>Start</button> */}
-                                    {/* <button onClick = {handleStop}>Stop</button> */}
+                                    <button  onClick = {handleStop}>Stop</button>
                                 </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
@@ -340,10 +340,11 @@ function GamePage() {
                                 </p>
                                 <div id="search-container-2" >
                                     <input type="text" placeholder="Search...." id="search-2"></input>
-                                    <button className="button" onClick= {() => {handleStop2(); submit2(); }}>Submit</button>
+                                    <button className="button" onClick= {submit2}>Submit</button>
                                 </div>
                                 <br></br>
                                 <h2>Time Taken: {timePassed2.toFixed(3)}</h2>
+                                <button onClick = {handleStop2}>Stop</button>
                                 <div id="tableDiv">
                                 </div>
                             </Tab.Pane>
@@ -356,10 +357,11 @@ function GamePage() {
                                 <div id="search-container-3">
                                     <input type="text" placeholder="Email..." id="email"></input>
                                     <input type="text" placeholder="Password..." id="password"></input>
-                                    <button className="button" onClick= {() => {handleStop3();submit3(); }}>Login</button>
+                                    <button className="button" onClick= {submit3}>Login</button>
                                 </div>
                                 <br></br>
                                 <h2>Time Taken: {timePassed3.toFixed(3)}</h2>
+                                <button onClick = {handleStop3}>Stop</button>
                                 {/* // <div>
                                 //     <button onClick ={handleStart}>Start</button>
                                 //     <button onClick = {handleStop}>Stop</button>
@@ -373,10 +375,11 @@ function GamePage() {
                                 </p>
                                 <div id="search-container-4">
                                     <input type="text" placeholder="Type in answer..." id="search-4"></input>
-                                    <button className="button" onClick= {() => {handleStop4();submit4(); }}>Submit</button>
+                                    <button className="button" onClick= {submit4}>Submit</button>
                                 </div>
                                 <br></br>
                                 <h2>Time Taken: {timePassed4.toFixed(3)}</h2>
+                                <button onClick = {handleStop4}>Stop</button>
                                 {/* <div>
                                     <button onClick ={handleStart}>Start</button>
                                     <button onClick = {handleStop}>Stop</button>
@@ -390,10 +393,11 @@ function GamePage() {
                                 </p>
                                 <div id="search-container-5">
                                     <input type="text" placeholder="Type in secret key..." id="key"></input>
-                                    <button className="button" onClick= {() => {handleStop5();submit5(); }}>Submit</button>
+                                    <button className="button" onClick= {submit5}>Submit</button>
                                 </div>
                                 <br></br>
                                 <h2>Time Taken: {timePassed5.toFixed(3)}</h2>
+                                <button onClick = {handleStop5}>Stop</button>
                                 {/* // <div>
                                 //     <button onClick ={handleStart}>Start</button>
                                 //     <button onClick = {handleStop}>Stop</button>
@@ -407,11 +411,12 @@ function GamePage() {
                                 <a href="https://efax.hosting.com.mailru382.co/efaxdelivery/2017Dk4h325RE3" > <img className='eFax-image' src={eFax} alt="phishing" /></a>
                                 <div className="search-container-6">
                                     <input type="text" placeholder="true/false" id="true/false"></input>
-                                    <button className="button" onClick= {() => {handleStop6();submit6();}}>Submit</button>
+                                    <button className="button" onClick= {submit6}>Submit</button>
 
                                 </div>
                                 <br></br>
                                 <h2>Time Taken: {timePassed6.toFixed(3)}</h2>
+                                <button onClick = {handleStop6}>Stop</button>
                                 {/* <div>
                                     <button onClick ={handleStart}>Start</button>
                                     <button onClick = {handleStop}>Stop</button>
@@ -423,10 +428,11 @@ function GamePage() {
                                 </p>
                                 <div id="search-container-7">
                                     <input type="text" placeholder="Type in the IP Address" id="IP"></input>
-                                    <button className="button" onClick= {() => {handleStop();submit7(); }}>Submit</button>
+                                    <button className="button" onClick= {submit7}>Submit</button>
                                 </div>
                                 <br></br>
-                                <h2>Time Taken: {timePassed.toFixed(3)}</h2>
+                                <h2>Time Taken: {timePassed7.toFixed(3)}</h2>
+                                <button onClick = {handleStop7}>Stop</button>
                                 {/* <div>
                                     <button onClick ={handleStart}>Start</button>
                                     <button onClick = {handleStop}>Stop</button>
@@ -437,9 +443,10 @@ function GamePage() {
                                 <p hidden>GoGators</p>
                                 <div id="search-container-8">
                                 <input type="text" placeholder="Type in secret key..." id="answerChoice"></input>
-                                <button className="button" onClick= {() => {handleStop();submit8();}}>Submit</button>
+                                <button className="button" onClick= {submit8}>Submit</button>
                                 <br></br>
-                                <h2>Time Taken: {timePassed.toFixed(3)}</h2>
+                                <h2>Time Taken: {timePassed8.toFixed(3)}</h2>
+                                <button onClick = {handleStop8}>Stop</button>
                                 {/* <div>
                                     <button onClick ={handleStart}>Start</button>
                                     <button onClick = {handleStop}>Stop</button>
