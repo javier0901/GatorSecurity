@@ -238,6 +238,11 @@ function GamePage() {
                                     <input type="text" placeholder="Search...." id="search-2"></input>
                                     <button className="button" onClick={submit2}>Submit</button>
                                 </div>
+                                <h2>Stopwatch: {timePassed.toFixed(3)}</h2>
+                                <div>
+                                    <button onClick ={handleStart}>Start</button>
+                                    <button onClick = {handleStop}>Stop</button>
+                                </div>
                                 <div id="tableDiv">
                                 </div>
                             </Tab.Pane>
@@ -252,6 +257,11 @@ function GamePage() {
                                     <input type="text" placeholder="Password..." id="password"></input>
                                     <button className="button" onClick={submit3}>Login</button>
                                 </div>
+                                <h2>Stopwatch: {timePassed.toFixed(3)}</h2>
+                                <div>
+                                    <button onClick ={handleStart}>Start</button>
+                                    <button onClick = {handleStop}>Stop</button>
+                                </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="fourth">
                                 <p>This question is about input sanitization to prevent things such as Cross-Site Scrypting attacks. Imagine an attacker types in a URL that has some
@@ -263,6 +273,11 @@ function GamePage() {
                                     <input type="text" placeholder="Type in answer..." id="search-4"></input>
                                     <button className="button" onClick={submit4}>Submit</button>
                                 </div>
+                                <h2>Stopwatch: {timePassed.toFixed(3)}</h2>
+                                <div>
+                                    <button onClick ={handleStart}>Start</button>
+                                    <button onClick = {handleStop}>Stop</button>
+                                </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="fifth">
                                 <p>This question focuses on decrypting some text to make sense of it. In this case we have used a Caeser Cypher to encrypt the text. You have to figure out
@@ -273,6 +288,11 @@ function GamePage() {
                                 <div id="search-container-5">
                                     <input type="text" placeholder="Type in secret key..." id="key"></input>
                                     <button className="button" onClick={submit5}>Submit</button>
+                                </div>
+                                <h2>Stopwatch: {timePassed.toFixed(3)}</h2>
+                                <div>
+                                    <button onClick ={handleStart}>Start</button>
+                                    <button onClick = {handleStop}>Stop</button>
                                 </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="sixth">
@@ -286,6 +306,11 @@ function GamePage() {
                                     <button className="button" onClick={submit6}>Submit</button>
 
                                 </div>
+                                <h2>Stopwatch: {timePassed.toFixed(3)}</h2>
+                                <div>
+                                    <button onClick ={handleStart}>Start</button>
+                                    <button onClick = {handleStop}>Stop</button>
+                                </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="seventh">
                                 <p>
@@ -295,6 +320,11 @@ function GamePage() {
                                     <input type="text" placeholder="Type in the IP Address" id="IP"></input>
                                     <button className="button" onClick={submit7}>Submit</button>
                                 </div>
+                                <h2>Stopwatch: {timePassed.toFixed(3)}</h2>
+                                <div>
+                                    <button onClick ={handleStart}>Start</button>
+                                    <button onClick = {handleStop}>Stop</button>
+                                </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="eighth">
                                 <p>The Flag is </p>
@@ -302,6 +332,11 @@ function GamePage() {
                                 <div id="search-container-8">
                                 <input type="text" placeholder="Type in secret key..." id="answerChoice"></input>
                                 <button className="button" onClick={submit8}>Submit</button>
+                                <h2>Stopwatch: {timePassed.toFixed(3)}</h2>
+                                <div>
+                                    <button onClick ={handleStart}>Start</button>
+                                    <button onClick = {handleStop}>Stop</button>
+                                </div>
                     </div>
                 </Tab.Pane>
                         </Tab.Content>
