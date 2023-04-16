@@ -398,10 +398,7 @@ function GamePage() {
                                 <br></br>
                                 <h2>Time Taken: {timePassed5.toFixed(3)}</h2>
                                 <button onClick = {handleStop5}>Stop</button>
-                                {/* // <div>
-                                //     <button onClick ={handleStart}>Start</button>
-                                //     <button onClick = {handleStop}>Stop</button>
-                                // </div> */}
+
                             </Tab.Pane>
                             <Tab.Pane eventKey="sixth">
                                 <p>
