@@ -439,7 +439,7 @@ function GamePage() {
                                 </div> */}
                             </Tab.Pane>
                             <Tab.Pane eventKey="eighth">
-                                <p>The Flag is </p>
+                                <p>Using the inspector tool in the web, search for the hidden flag in this page. </p>
                                 <p hidden>GoGators</p>
                                 <div id="search-container-8">
                                 <input type="text" placeholder="Type in secret key..." id="answerChoice"></input>
